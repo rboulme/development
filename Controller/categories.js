@@ -1,76 +1,5 @@
-const e = require("express");
 const connection = require("../connection/Mysql");
 
-// Get All Shops
-const getAllShop = (req, res) => {
-  let sql = `select * from shop`;
-  connection.query(sql, (err, result) => {
-    if (err) {
-      res.json(err);
-    } else {
-      res.json(result);
-    }
-  });
-};
-
-// Get id Shop
-
-const getIdShop = (req, res) => {
-  let id = req.params.id;
-  let sql = `select * from shop where id = '${id}'`;
-  connection.query(sql, (err, result) => {
-    if (err) {
-      res.json(err);
-    } else {
-      res.json(result);
-    }
-  });
-};
-
-// insert shops
-const insertShop = (req, res) => {
-  let name = req.body.name;
-  let phone = req.body.phone;
-  let address = req.body.address;
-  let sql = `insert into shop (name , phone, address) VALUES ('${name}', '${phone}' , '${address}')`;
-  connection.query(sql, (err, result) => {
-    if (err) {
-      res.json(err);
-    }
-    if (result) {
-      res.json(result);
-    }
-  });
-};
-
-const updateShop = (req, res) => {
-  let id = req.params.id;
-  let name = req.body.name;
-  let phone = req.body.phone;
-  let address = req.body.address;
-  let sql = `update shop set name='${name}' , phone='${phone}' ,address = '${address}' where id = '${id}'`;
-  connection.query(sql, (err, result) => {
-    if (err) {
-      res.json(err);
-    }
-    if (result) {
-      res.json(result);
-    }
-  });
-};
-
-const deleteShop = (req, res) => {
-  let id = req.params.id;
-  let sql = `delete from shop where id='${id}'`;
-  connection.query(sql, (err, result) => {
-    if (err) {
-      res.json(err);
-    }
-    if (result) {
-      res.json(result);
-    }
-  });
-};
 
 const getPartCategories = (req, res) => {
   let sql = `select * from partcategories`;
@@ -132,18 +61,13 @@ const deleteCategories = (req, res) => {
   connection.query(sql, (err, result) => {
     if (err) {
       res.json(err);
-    }else
+    } else
     if (result) {
       res.json(result);
     }
   });
 };
 module.exports = {
-  getAllShop,
-  getIdShop,
-  insertShop,
-  updateShop,
-  deleteShop,
   getPartCategories,
   insertCategories,
   updateCategories,

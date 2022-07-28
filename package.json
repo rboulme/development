@@ -1,22 +1,24 @@
 {
-  "name": "shops",
+  "name": "shop",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Osama-Same/Shops.git"
+    "url": "git+https://github.com/Osama-Same/Shop.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Osama-Same/Shops/issues"
+    "url": "https://github.com/Osama-Same/Shop/issues"
   },
-  "homepage": "https://github.com/Osama-Same/Shops#readme",
+  "homepage": "https://github.com/Osama-Same/Shop#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mysql2": "^2.3.3"
